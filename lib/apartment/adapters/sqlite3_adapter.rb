@@ -17,7 +17,7 @@ module Apartment
 
       def drop(tenant)
         raise TenantNotFound,
-          "The tenant #{environmentify(tenant)} cannot be found." unless File.exists?(database_file(tenant))
+          "The tenant #{environmentify(tenant)} cannot be found." unless File.exist?(database_file(tenant))
 
         File.delete(database_file(tenant))
       end
